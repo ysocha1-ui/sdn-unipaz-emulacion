@@ -17,13 +17,15 @@ instalar el entorno de emulación, vaya directo al [apartado 4.1](#41-verificar-
 
 ## 1. Qué se va a reproducir
 
-La topología del campus se construyó en GNS3 en tres etapas, y sobre ella se hicieron dos experimentos:
+La topología del campus se construyó en GNS3 en tres etapas, y sobre ella se hicieron dos experimentos (el primero,
+con una réplica):
 
 | Etapa | Qué se hizo | Carpeta | Documento |
 |---|---|---|---|
 | Fase 1 | Núcleo: salida a internet, conmutador de núcleo (Open vSwitch) y enrutador de fibra, conectados al controlador Ryu | [`gns3/fase1/`](gns3/fase1/) | 4.3 |
 | Fase 2 | Cadena de prueba (Salones antiguos y Aprisco) y **experimento 1**: calidad de servicio con tráfico unicast | [`gns3/fase2/`](gns3/fase2/), datos en [`gns3/mediciones/`](gns3/mediciones/) | 4.4, 4.5 |
 | Fase 3 | Los diez bloques restantes, hasta completar los trece | [`gns3/fase3/`](gns3/fase3/) | 4.3 |
+| Réplica del experimento 1 | Calidad de servicio con tráfico unicast sobre los trece bloques: 30 repeticiones, cargas de 0 a 200 Mbit/s y **orden aleatorio** | [`gns3/replica_unicast/`](gns3/replica_unicast/) | 4.5.1 |
 | Experimento 2 | Seis equipos de prueba más y **experimento con tráfico IP Multicast** | [`gns3/multicast/`](gns3/multicast/) | 3.9, 4.6 |
 
 Estas fases son etapas de construcción de la topología en GNS3; no corresponden a las cinco fases del plan de trabajo
@@ -159,12 +161,14 @@ Todos los comandos se ejecutan desde la raíz del repositorio.
 No requiere GNS3, Docker ni Ryu; solo Python con SciPy y Matplotlib.
 
 ```bash
-python3 gns3/multicast/analizar_multicast.py   # experimento multicast: Tablas 9 y 10, Figura 7
-python3 scripts/graficas_capitulo4.py          # experimento unicast: Tablas 7 y 8, Figura 6
+python3 gns3/multicast/analizar_multicast.py      # experimento multicast: Tablas 10 y 11, Figura 8
+python3 gns3/replica_unicast/analizar_replica.py  # réplica unicast: Tabla 9, Figura 7
+python3 scripts/graficas_capitulo4.py             # primera serie unicast: Tablas 7 y 8, Figura 6
 ```
 
-El primero reescribe `gns3/multicast/datos/resumen_multicast.md`; con `git diff` puede comprobar que el resultado es
-idéntico al publicado.
+Los dos primeros reescriben `gns3/multicast/datos/resumen_multicast.md` y
+`gns3/replica_unicast/datos/resumen_replica.md`; con `git diff` puede comprobar que el resultado es idéntico al
+publicado.
 
 ### 4.2 Abrir la topología en GNS3 (para verla)
 
@@ -194,7 +198,16 @@ El diseño del experimento y sus límites se detallan en [`gns3/multicast/README
 
 ### 4.4 Repetir el experimento unicast
 
-Se hizo a mano, desde las consolas de los equipos en GNS3; el procedimiento exacto, con los comandos usados, está en
+**Réplica (apartado 4.5.1), automatizada.** Con el entorno preparado (pasos 1 y 2 del apartado 4.3):
+
+```bash
+RU_DATOS=/tmp/replica python3 gns3/replica_unicast/ejecutar_replica_unicast.py --reps 30 --cargas 0,20,40,60,200
+```
+
+Tarda unas 3 horas (300 mediciones); se puede interrumpir con `Ctrl+C` y reanudar con el mismo comando. Para una prueba
+rápida, `--reps 1` (unos 6 minutos). Detalles en [`gns3/replica_unicast/README.md`](gns3/replica_unicast/README.md).
+
+**Primera serie (apartados 4.4 y 4.5).** Se hizo a mano, desde las consolas de los equipos en GNS3; el procedimiento exacto, con los comandos usados, está en
 [`gns3/fase2/README.md`](gns3/fase2/README.md). Con el proyecto portable ya abierto, empiece en su paso 2.
 
 ### 4.5 Regenerar las figuras del documento
@@ -203,8 +216,9 @@ Se hizo a mano, desde las consolas de los equipos en GNS3; el procedimiento exac
 TESIS=1 python3 scripts/graficas_capitulo4.py      # Figuras 1 y 6
 python3 scripts/diagramas_arquitectura.py          # Figuras 2 y 3
 python3 scripts/diagrama_topologia_gns3.py         # Figura 4
-TESIS=1 python3 gns3/multicast/analizar_multicast.py   # Figura 7
-TESIS=1 python3 scripts/proyeccion_campus.py       # Figura 8
+TESIS=1 python3 gns3/replica_unicast/analizar_replica.py   # Figura 7
+TESIS=1 python3 gns3/multicast/analizar_multicast.py   # Figura 8
+TESIS=1 python3 scripts/proyeccion_campus.py       # Figura 9
 ```
 
 Las figuras quedan en `docs/graficas/tesis/`.

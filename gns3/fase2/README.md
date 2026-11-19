@@ -91,3 +91,7 @@ Las mediciones se hicieron en secuencia (primero el escenario tradicional y desp
 con la aplicación `simple_switch_13`, que reenvía como un conmutador convencional una vez instala sus reglas; el flujo
 fue unicast, porque iperf3 no genera multicast. El tráfico multicast se evaluó en el experimento 2
 ([`../multicast/`](../multicast/)), con orden aleatorio.
+
+**Este experimento se repitió** con orden aleatorio, 30 repeticiones y cargas de 0 a 200 Mbit/s en
+[`../replica_unicast/`](../replica_unicast/) (apartado 4.5.1): la diferencia de latencia de esta primera serie
+(2,85 ms con 40 Mbit/s) no se confirmó, y las dos arquitecturas ofrecieron la misma calidad de servicio.
