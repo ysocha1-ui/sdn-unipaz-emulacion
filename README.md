@@ -71,7 +71,7 @@ herramienta de apoyo y guía: en la programación de los scripts de emulación, 
 gestión multicast para Ryu, en el procesamiento estadístico y la elaboración de gráficas, y en la revisión de la
 redacción, las citas y el formato del documento. Las decisiones del proyecto, el levantamiento de información en campo y
 la interpretación de los resultados corresponden al autor, quien revisó el contenido elaborado con la herramienta y
-responde por él. El uso de la herramienta también se declara en la introducción del documento de grado.
+responde por él.
 
 ## Autor
 
