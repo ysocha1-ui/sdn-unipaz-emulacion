@@ -1,0 +1,67 @@
+===== Construcción Fase 3 — 2026-10-18 17:17:44 =====
+
+[1] Crear nodos
+  creado: Switch-NucleoProduccion-A
+  creado: Switch-NucleoProduccion-B
+  creado: Switch-Porteria
+  creado: Switch-LBA
+  creado: Switch-Biblioteca
+  creado: Switch-EdificioAulas
+  creado: Switch-Entrada
+  creado: Switch-ParadaBuses
+  creado: Switch-LAB2
+  creado: Switch-LAB1
+  creado: NVR-LBA
+  creado: PC-LAB2
+  creado: Camara-LAB2
+
+[2] Cablear
+  enlace: Router-Fibra (puerto 2) <-> Switch-NucleoProduccion-A (eth0)
+  enlace: Router-Fibra (puerto 3) <-> Switch-NucleoProduccion-B (eth0)
+  enlace: Router-Fibra (puerto 4) <-> Switch-Porteria (eth0)
+  enlace: Router-Fibra (puerto 5) <-> Switch-LBA (eth0)
+  enlace: Router-Fibra (puerto 6) <-> Switch-Biblioteca (eth0)
+  enlace: Router-Fibra (puerto 7) <-> Switch-EdificioAulas (eth0)
+  enlace: Switch-Porteria (puerto 1) <-> Switch-Entrada (eth0)
+  enlace: Switch-Entrada (puerto 1) <-> Switch-ParadaBuses (eth0)
+  enlace: Switch-LBA (puerto 1) <-> Switch-LAB2 (eth0)
+  enlace: Switch-LBA (puerto 2) <-> Switch-LAB1 (eth0)
+  enlace: Switch-LBA (puerto 3) <-> NVR-LBA (eth0)
+  enlace: Switch-LAB2 (puerto 1) <-> PC-LAB2 (eth0)
+  enlace: Switch-LAB2 (puerto 2) <-> Camara-LAB2 (eth0)
+
+[3] Encender nodos nuevos
+  encendido: Switch-NucleoProduccion-A
+  encendido: Switch-NucleoProduccion-B
+  encendido: Switch-Porteria
+  encendido: Switch-LBA
+  encendido: Switch-Biblioteca
+  encendido: Switch-EdificioAulas
+  encendido: Switch-Entrada
+  encendido: Switch-ParadaBuses
+  encendido: Switch-LAB2
+  encendido: Switch-LAB1
+  encendido: NVR-LBA
+  encendido: PC-LAB2
+  encendido: Camara-LAB2
+
+[4] IP de gestión (DHCP) y OpenFlow 1.3 en cada OVS nuevo
+  Switch-NucleoProduccion-A: br0 = 192.168.122.124/24
+  Switch-NucleoProduccion-B: br0 = 192.168.122.121/24
+  Switch-Porteria: br0 = 192.168.122.6/24
+  Switch-LBA: br0 = 192.168.122.58/24
+  Switch-Biblioteca: br0 = 192.168.122.40/24
+  Switch-EdificioAulas: br0 = 192.168.122.177/24
+  Switch-Entrada: br0 = 192.168.122.78/24
+  Switch-ParadaBuses: br0 = 192.168.122.184/24
+  Switch-LAB2: br0 = 192.168.122.30/24
+  Switch-LAB1: br0 = 192.168.122.169/24
+
+[5] Modo SDN: fail-mode secure + controlador Ryu
+
+[6] IP fija de los hosts representativos (persistente en /etc/network/interfaces)
+  NVR-LBA: 172.70.0.10/16
+  PC-LAB2: 172.30.0.21/16
+  Camara-LAB2: 172.70.0.21/16
+
+Listo. Verificar con: python3 gns3/fase3/verificar_fase3.py

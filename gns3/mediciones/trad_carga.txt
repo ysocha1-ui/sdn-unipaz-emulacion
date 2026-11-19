@@ -1,0 +1,30 @@
+== Corrida 1 ==
+rtt min/avg/max/mdev = 13.611/17.755/23.516/3.017 ms
+[  5]   0.00-20.02  sec  23.8 MBytes  9.98 Mbits/sec  1.519 ms  29/17265 (0.17%)  receiver
+== Corrida 2 ==
+rtt min/avg/max/mdev = 15.119/19.399/28.013/2.727 ms
+[  5]   0.00-20.02  sec  23.8 MBytes  9.99 Mbits/sec  1.604 ms  0/17260 (0%)  receiver
+== Corrida 3 ==
+rtt min/avg/max/mdev = 13.781/20.581/27.912/4.181 ms
+[  5]   0.00-20.02  sec  23.8 MBytes  9.98 Mbits/sec  1.634 ms  11/17265 (0.064%)  receiver
+== Corrida 4 ==
+rtt min/avg/max/mdev = 14.216/21.969/28.340/3.374 ms
+[  5]   0.00-20.02  sec  23.8 MBytes  9.99 Mbits/sec  1.687 ms  8/17265 (0.046%)  receiver
+== Corrida 5 ==
+rtt min/avg/max/mdev = 9.704/21.798/28.563/4.962 ms
+[  5]   0.00-20.02  sec  23.8 MBytes  9.96 Mbits/sec  1.725 ms  58/17265 (0.34%)  receiver
+== Corrida 6 ==
+rtt min/avg/max/mdev = 14.575/23.134/29.168/4.457 ms
+[  5]   0.00-20.03  sec  23.4 MBytes  9.82 Mbits/sec  1.984 ms  289/17265 (1.7%)  receiver
+== Corrida 7 ==
+rtt min/avg/max/mdev = 17.234/23.360/33.866/4.760 ms
+[  5]   0.00-20.03  sec  23.6 MBytes  9.89 Mbits/sec  2.106 ms  175/17265 (1%)  receiver
+== Corrida 8 ==
+rtt min/avg/max/mdev = 17.047/22.762/30.073/3.222 ms
+[  5]   0.00-20.02  sec  23.8 MBytes  9.97 Mbits/sec  1.900 ms  37/17265 (0.21%)  receiver
+== Corrida 9 ==
+rtt min/avg/max/mdev = 12.359/19.941/28.711/3.540 ms
+[  5]   0.00-20.03  sec  23.8 MBytes  9.97 Mbits/sec  1.753 ms  29/17265 (0.17%)  receiver
+== Corrida 10 ==
+rtt min/avg/max/mdev = 15.089/23.465/32.222/4.345 ms
+[  5]   0.00-20.02  sec  23.7 MBytes  9.94 Mbits/sec  1.881 ms  86/17265 (0.5%)  receiver

@@ -1,0 +1,41 @@
+===== Verificación Fase 3 — 2026-10-18 17:19:18 =====
+
+[1] Estado de los 13 Open vSwitch frente al controlador Ryu (tcp:192.168.122.1:6633)
+Switch                       Bloque                                           IP br0             Modo      Conectado  Reglas
+Core-Switch-48p              Administrativa (núcleo)                          192.168.122.5/24   secure    true       19
+Switch-SalonesAntiguos       Salones antiguos                                 192.168.122.207/24 secure    true       6
+Switch-Aprisco               Aprisco                                          192.168.122.202/24 secure    true       5
+Switch-NucleoProduccion-A    Núcleo de producción (troncal A)                 192.168.122.124/24 secure    true       1
+Switch-NucleoProduccion-B    Núcleo de producción (troncal B)                 192.168.122.121/24 secure    true       1
+Switch-Porteria              Portería                                         192.168.122.6/24   secure    true       2
+Switch-Entrada               Entrada                                          192.168.122.78/24  secure    true       1
+Switch-ParadaBuses           Parada de autobuses                              192.168.122.184/24 secure    true       1
+Switch-LBA                   Laboratorio 3 (LBA) + Psicosocial vía NVR-LBA    192.168.122.58/24  secure    true       3
+Switch-LAB2                  Laboratorio 2                                    192.168.122.30/24  secure    true       1
+Switch-LAB1                  Laboratorio 1                                    192.168.122.169/24 secure    true       1
+Switch-Biblioteca            Biblioteca                                       192.168.122.40/24  secure    true       1
+Switch-EdificioAulas         Edificio de Aulas                                192.168.122.177/24 secure    true       1
+
+Total conectados a Ryu: 13 de 13
+Conexiones OpenFlow abiertas en Ryu (puerto 6633): 13
+
+[2] Pruebas de conectividad extremo a extremo (ping de 10 paquetes)
+- PC-LAB2 → Servidor-Nucleo (bloque más profundo → núcleo)
+    10 packets transmitted, 10 received, 0% packet loss, time 1806ms
+    rtt min/avg/max/mdev = 9.185/20.099/94.027/24.918 ms
+- PC-LAB2 → PC-Aprisco (entre dos ramas encadenadas distintas)
+    10 packets transmitted, 10 received, 0% packet loss, time 1803ms
+    rtt min/avg/max/mdev = 10.994/27.783/156.556/42.988 ms
+- Camara-LAB2 → NVR-LBA (tráfico de videovigilancia, subred IoT 172.70.0.0/16)
+    10 packets transmitted, 10 received, 0% packet loss, time 1806ms
+    rtt min/avg/max/mdev = 7.229/21.286/102.400/27.106 ms
+
+[3] Reglas instaladas por Ryu en el switch de Laboratorio 2 (ruta más profunda)
+OFPST_FLOW reply (OF1.3) (xid=0x2):
+ cookie=0x0, duration=5.592s, table=0, n_packets=11, n_bytes=1022, priority=1,in_port=1,dl_src=02:42:91:af:b8:00,dl_dst=02:42:8d:da:b1:00 actions=output:2
+ cookie=0x0, duration=5.579s, table=0, n_packets=10, n_bytes=924, priority=1,in_port=2,dl_src=02:42:8d:da:b1:00,dl_dst=02:42:91:af:b8:00 actions=output:1
+ cookie=0x0, duration=3.673s, table=0, n_packets=10, n_bytes=980, priority=1,in_port=1,dl_src=02:42:7c:60:96:00,dl_dst=02:42:8d:da:b1:00 actions=output:2
+ cookie=0x0, duration=3.657s, table=0, n_packets=9, n_bytes=882, priority=1,in_port=2,dl_src=02:42:8d:da:b1:00,dl_dst=02:42:7c:60:96:00 actions=output:1
+ cookie=0x0, duration=1.830s, table=0, n_packets=8, n_bytes=784, priority=1,in_port=1,dl_src=02:42:20:69:ce:00,dl_dst=02:42:6d:23:09:00 actions=output:3
+ cookie=0x0, duration=1.809s, table=0, n_packets=7, n_bytes=686, priority=1,in_port=3,dl_src=02:42:6d:23:09:00,dl_dst=02:42:20:69:ce:00 actions=output:1
+ cookie=0x0, duration=16.120s, table=0, n_packets=32, n_bytes=2104, priority=0 actions=CONTROLLER:65535

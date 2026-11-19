@@ -1,0 +1,8 @@
+Capturas de demostración (1 receptor suscrito, 10 s a 5 Mbit/s). Rx-LAB2 y PC-LAB2 están en el mismo conmutador (Switch-LAB2).
+
+tradicional  Rx-LAB2  suscrito                         paquetes del grupo 239.10.10.10:   4462   mensajes IGMP: 4
+tradicional  PC-LAB2  observador (no pidió el flujo)   paquetes del grupo 239.10.10.10:   4462   mensajes IGMP: 4
+tradicional  bytes recibidos por cada equipo (contadores de la interfaz): Rx-LAB2=6.75 MB, PC-LAB2=6.75 MB
+sdn          Rx-LAB2  suscrito                         paquetes del grupo 239.10.10.10:   4462   mensajes IGMP: 5
+sdn          PC-LAB2  observador (no pidió el flujo)   paquetes del grupo 239.10.10.10:      0   mensajes IGMP: 1
+sdn          bytes recibidos por cada equipo (contadores de la interfaz): Rx-LAB2=6.75 MB, PC-LAB2=0.00 MB
