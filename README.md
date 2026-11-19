@@ -58,11 +58,6 @@ los equipos de prueba con `docker build -t unipaz/ipterm-mc:1 gns3/multicast/doc
 Los valores absolutos (latencia, variación del retardo) dependen del equipo en que se ejecute la emulación; las
 diferencias en bytes dependen de la topología.
 
-## Qué no está en el repositorio
-
-Por confidencialidad, no se incluyen el inventario detallado de la red de UNIPAZ, el informe de tráfico del firewall
-institucional, las respuestas de los informantes clave ni datos personales. Las cifras agregadas que se usan en el
-documento provienen de esas fuentes y se citan allí.
 
 ## Uso de inteligencia artificial
 
