@@ -5,7 +5,7 @@ Uso (con GNS3 abierto en el proyecto Fase1-Nucleo-Administrativa y Ryu corriendo
 
 Usa la API local de GNS3 (localhost:3080) con el usuario/clave de ~/.config/GNS3/2.2/gns3_server.conf
 y `docker exec` para configurar cada Open vSwitch. Cada paso queda registrado en gns3/fase3/registro_construccion.txt.
-La topología sale de gns3/plan-nodos-enlaces.md (jerarquía del inventario del campus); no inventar nodos intermedios.
+La topología sigue la jerarquía física del inventario del campus (ver gns3/topologia.md); no inventa nodos intermedios.
 """
 import base64
 import configparser
