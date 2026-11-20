@@ -47,8 +47,7 @@ Para repetir los experimentos completos, ver el [manual](MANUAL.md).
 
 En el desarrollo de este proyecto se usó **Claude** (Anthropic), un asistente de inteligencia artificial, como
 herramienta de apoyo y guía: en la programación de los scripts de emulación, medición y análisis y de la aplicación de
-gestión multicast para Ryu, en el procesamiento estadístico y la elaboración de gráficas, y en la revisión de la
-redacción, las citas y el formato del documento. Las decisiones del proyecto, el levantamiento de información en campo y
+gestión multicast para Ryu, en el procesamiento estadístico y la elaboración de gráficas. Las decisiones del proyecto, el levantamiento de información en campo y
 la interpretación de los resultados corresponden al autor, quien revisó el contenido elaborado con la herramienta y
 responde por él.
 
