@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# gráficas que generan los scripts de verificación (las del documento están en docs/graficas/tesis/)
+docs/graficas/*.png
