@@ -193,6 +193,8 @@ python3 gns3/multicast/analizar_multicast.py    # 4. resumen, pruebas y gráfica
 - Prueba rápida, de unos 3 minutos:
   `MC_DATOS=/tmp/humo python3 gns3/multicast/ejecutar_experimento.py --reps 1 --duracion 6 --ks 1,3`.
 - Para repetir las capturas de paquetes del Apéndice D: `python3 gns3/multicast/demostracion_capturas.py`.
+- Demostración corta (unos 4 minutos), sin escribir en los datos publicados: `python3 gns3/multicast/demo_sustentacion.py`.
+  Con la red tradicional, un equipo que no pidió el flujo lo recibe completo; con SDN, no recibe ningún paquete.
 
 El diseño del experimento y sus límites se detallan en [`gns3/multicast/README.md`](gns3/multicast/README.md).
 
