@@ -18,13 +18,13 @@ La topología del campus se construyó en GNS3 en tres fases y sobre ella se hic
 |---|---|---|
 | [`gns3/fase1/`](gns3/fase1/) | Fase 1: núcleo de la red (salidas a internet, conmutador de núcleo Open vSwitch y enrutador de fibra) conectado al controlador Ryu | 4.3 |
 | [`gns3/fase2/`](gns3/fase2/) | Fase 2: cadena de prueba (Salones antiguos y Aprisco) y procedimiento del **experimento 1**, calidad de servicio con tráfico unicast | 4.4, 4.5 |
-| [`gns3/mediciones/`](gns3/mediciones/) | Datos del experimento 1: salidas de ping e iperf3 de las diez repeticiones por escenario, resumen estadístico y captura | 4.4, 4.5 (Tablas 7 y 8) |
-| [`gns3/replica_unicast/`](gns3/replica_unicast/) | **Réplica del experimento 1** pedida por los calificadores: 30 repeticiones, cargas de 0 a 200 Mbit/s y orden aleatorio (300 mediciones), con scripts, datos crudos y registros del controlador | 4.5.1 (Tabla 9, Figura 7) |
+| [`gns3/mediciones/`](gns3/mediciones/) | Datos del experimento 1: salidas de ping e iperf3 de las diez repeticiones por escenario, resumen estadístico y captura | 4.5 (primera serie) |
+| [`gns3/replica_unicast/`](gns3/replica_unicast/) | **Réplica del experimento 1** pedida por los calificadores: 30 repeticiones, cargas de 0 a 200 Mbit/s y orden aleatorio (300 mediciones), con scripts, datos crudos y registros del controlador | 4.4, 4.5 (Tablas 7 y 8, Figura 6) |
 | [`gns3/fase3/`](gns3/fase3/) | Fase 3: construcción y verificación de los trece bloques del campus | 4.3 |
 | [`gns3/topologia.md`](gns3/topologia.md) | Todos los nodos y enlaces de la topología, generados desde el proyecto de GNS3 | 4.3 (Figura 4) |
 | [`gns3/multicast/`](gns3/multicast/) | **Experimento 2**, tráfico IP Multicast: guía detallada, scripts de preparación, ejecución, análisis y capturas, y Dockerfile de los equipos de prueba | 3.9, 4.6 |
 | `gns3/multicast/paquete/Fase1-Nucleo-Administrativa.gns3project` | Proyecto portable de GNS3 con la topología completa (las tres fases y los equipos de los dos experimentos) | 4.3 |
-| `gns3/multicast/datos/` | Datos crudos de las 120 mediciones (`corridas.jsonl`), registros del controlador y capturas de paquetes (`.pcap`) | 4.6 (Tablas 10 y 11), Apéndice D (D.5) |
+| `gns3/multicast/datos/` | Datos crudos de las 120 mediciones (`corridas.jsonl`), registros del controlador y capturas de paquetes (`.pcap`) | 4.6 (Tablas 9 y 10), Apéndice D (D.5) |
 | [`ryu-apps/gestion_multicast_igmp.py`](ryu-apps/gestion_multicast_igmp.py) | Aplicación de gestión multicast para Ryu: consultor IGMP, aprendizaje de miembros y poda de grupos | 3.9 |
 | [`scripts/`](scripts/) | Generación de las figuras del documento (arquitectura, topología, calidad de servicio y proyección) | Capítulo 4 |
 | [`docs/graficas/tesis/`](docs/graficas/tesis/) | Figuras tal como aparecen en el documento | Capítulo 4 |
@@ -34,8 +34,8 @@ La topología del campus se construyó en GNS3 en tres fases y sobre ella se hic
 Sin instalar el entorno de emulación, solo con Python, SciPy y Matplotlib:
 
 ```bash
-python3 gns3/multicast/analizar_multicast.py      # recalcula las Tablas 10 y 11 desde los datos crudos
-python3 gns3/replica_unicast/analizar_replica.py  # recalcula la Tabla 9 (réplica del experimento 1)
+python3 gns3/multicast/analizar_multicast.py      # recalcula las Tablas 9 y 10 desde los datos crudos
+python3 gns3/replica_unicast/analizar_replica.py  # recalcula las Tablas 7 y 8 (experimento 1)
 python3 scripts/graficas_capitulo4.py             # recalcula las cifras de la primera serie del experimento 1
 ```
 

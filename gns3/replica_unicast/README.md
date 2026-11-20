@@ -1,6 +1,6 @@
 # Réplica del experimento 1: calidad de servicio con tráfico unicast
 
-Documento: apartado **4.5.1** (Tabla 9 y Figura 7).
+Documento: apartados **4.4 y 4.5** (Tablas 7 y 8, Figura 6). La primera serie se resume en 4.5.
 
 La primera serie del experimento 1 ([`../fase2/`](../fase2/), datos en [`../mediciones/`](../mediciones/)) se midió en
 secuencia: primero la red tradicional y después la SDN, con diez repeticiones. Los calificadores pidieron repetirla con

@@ -93,5 +93,5 @@ fue unicast, porque iperf3 no genera multicast. El tráfico multicast se evaluó
 ([`../multicast/`](../multicast/)), con orden aleatorio.
 
 **Este experimento se repitió** con orden aleatorio, 30 repeticiones y cargas de 0 a 200 Mbit/s en
-[`../replica_unicast/`](../replica_unicast/) (apartado 4.5.1): la diferencia de latencia de esta primera serie
+[`../replica_unicast/`](../replica_unicast/) (apartados 4.4 y 4.5): la diferencia de latencia de esta primera serie
 (2,85 ms con 40 Mbit/s) no se confirmó, y las dos arquitecturas ofrecieron la misma calidad de servicio.
